@@ -83,7 +83,7 @@ This is a personal portfolio website showcasing skills, projects, and contact in
 - Maintain consistency between data and initial HTML content
 
 ## Design System Reference
-- **Typography**: San Francisco font stack (`-apple-system, BlinkMacSystemFont`)
+- **Typography**: San Francisco font stack (`-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif`)
 - **Spacing**: Follow 8px grid system
 - **Border Radius**: Use subtle rounded corners for cards
 - **Shadows**: Subtle shadows with `var(--shadow)`
