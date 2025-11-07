@@ -132,11 +132,58 @@
         });
     }
 
+    // Dark mode toggle functionality
+    function initThemeToggle() {
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = themeToggle.querySelector('.theme-icon');
+        const body = document.body;
+        
+        // Check for saved theme preference or default to system preference
+        const savedTheme = localStorage.getItem('theme');
+        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        
+        // Initialize theme
+        if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+            body.classList.add('dark-theme');
+            themeIcon.textContent = '☀️';
+        } else {
+            body.classList.remove('dark-theme');
+            themeIcon.textContent = '🌙';
+        }
+        
+        // Toggle theme on button click
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-theme');
+            const isDark = body.classList.contains('dark-theme');
+            
+            // Update icon
+            themeIcon.textContent = isDark ? '☀️' : '🌙';
+            
+            // Save preference
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        });
+        
+        // Listen for system theme changes
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+            // Only update if user hasn't set a preference
+            if (!localStorage.getItem('theme')) {
+                if (e.matches) {
+                    body.classList.add('dark-theme');
+                    themeIcon.textContent = '☀️';
+                } else {
+                    body.classList.remove('dark-theme');
+                    themeIcon.textContent = '🌙';
+                }
+            }
+        });
+    }
+
     // Initialize application when DOM is loaded
     document.addEventListener('DOMContentLoaded', function() {
         smoothScroll();
         addScrollAnimations();
         addNavbarScrollEffect();
+        initThemeToggle();
         
         console.log('Personal Site Application initialized with AngularJS-inspired architecture');
     });
