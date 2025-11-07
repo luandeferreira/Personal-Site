@@ -71,18 +71,9 @@ body {
     transition: var(--transition);
 }
 
+/* Dark theme navbar */
 .dark-theme .navbar {
     background: rgba(0, 0, 0, 0.8);
-}
-
-@media (prefers-color-scheme: dark) {
-    .navbar {
-        background: rgba(0, 0, 0, 0.8);
-    }
-    
-    .dark-theme .navbar {
-        background: rgba(255, 255, 255, 0.8);
-    }
 }
 
 .navbar .container {
@@ -151,18 +142,9 @@ body {
     background: linear-gradient(135deg, #f5f5f7 0%, #ffffff 100%);
 }
 
+/* Dark theme hero */
 .dark-theme .hero {
     background: linear-gradient(135deg, #1c1c1e 0%, #000000 100%);
-}
-
-@media (prefers-color-scheme: dark) {
-    .hero {
-        background: linear-gradient(135deg, #1c1c1e 0%, #000000 100%);
-    }
-    
-    .dark-theme .hero {
-        background: linear-gradient(135deg, #f5f5f7 0%, #ffffff 100%);
-    }
 }
 
 .hero-content {

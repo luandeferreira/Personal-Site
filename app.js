@@ -146,7 +146,7 @@
         if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
             body.classList.add('dark-theme');
             themeIcon.textContent = '☀️';
-        } else if (savedTheme === 'light') {
+        } else {
             body.classList.remove('dark-theme');
             themeIcon.textContent = '🌙';
         }
